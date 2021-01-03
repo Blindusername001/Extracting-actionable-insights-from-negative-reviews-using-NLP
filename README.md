@@ -7,3 +7,9 @@ The most effective way to extract web data from review sites is through the use 
 
 The second best way (atleast when using python) is to use web crawlers - scrapy and beautiful soap are example modules in python which can crawl thorugh a given website. The way they achieve this is by getting the http response of a given URL and crawling the response to get the desired data.
 
+The issue with using this method is when a user has to do an interaction with a webpage to get the entire data. For example, the website might have a 'Read More' button which has to be clicked before extracting this data. These usually take the form of a GET request or a POST request.
+![ScreenShot](https://github.com/karthikkumar001/A-method-to-extract-actionable-insights-from-negative-reviews-using-NLP/blob/main/Images/2021-01-03%2020_16_24-Window.png)
+
+![ScreenShot](https://github.com/karthikkumar001/A-method-to-extract-actionable-insights-from-negative-reviews-using-NLP/blob/main/Images/2021-01-03%2020_20_42-Window.png)
+
+When using scrapy, one can easily overcome this by sending the http request with a GET or POST request. If the host website accepts this - it is well and good. But most websites do not allow this. To subvert this, you can write your scrapy code to copy the request parameters from firefox or chrome and trick the host website system into believing the request os from a normal user and not an automated code. It works but it isn't exactly ethical!
