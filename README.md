@@ -24,3 +24,5 @@ https://www.youtube.com/watch?v=5RxbfPjQKe8
 A text explanation of how selenium code works can be found here - https://github.com/karthikkumar001/Web-Scraping-infinite-scroll-websites-with-Python-Selenium/blob/main/README.md
 
 
+# STEP 2: TRY USING EXISTING IMPLEMENTATIONS (We might be lucky)
+Why reinvent the wheel? Instead, we can save time by trying out if any existing implementations shared by others can be modified and used for our specific case.
