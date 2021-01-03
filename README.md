@@ -20,3 +20,7 @@ When using scrapy, one can easily overcome this by sending the http request with
 When both the above cases aren't satisfactory, the only option left is to use selenium. It is comapritively slower than the above methods - but when one has to balance (ethics + cost) vs performance, there isn't any other option. The good thing here is that selenium can be used to create an automation which will mimic the way a user would browse a website manually - opening a browser, entering a URL, clicking buttons, drop-downs, etc. The below video will explain why the previous two methods did not work for my case and also show how selenium works more like a manual user.
 
 https://www.youtube.com/watch?v=5RxbfPjQKe8
+
+A text explanation of how selenium code works can be found here - https://github.com/karthikkumar001/Web-Scraping-infinite-scroll-websites-with-Python-Selenium/blob/main/README.md
+
+
