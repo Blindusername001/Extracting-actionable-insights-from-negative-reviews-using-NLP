@@ -110,6 +110,7 @@ All 1/5 and 2/5 ratings were filtered and from each sentence, the subject and ob
 ## Since the sentiment of each statement in output 1 was populated, it can now be assumed that the sentiment of the statement is directed towards the extracted noun. This is the assumption in our research – most of the statements in reviews will talk about a noun subject or object and the attributes surrounding the same.
 
 If a statement has both a noun subject and a noun object, the sentiment of the subject and object are placed in separate rows of the resulting dataframe and the sentiment of the original statement is applied to both.
+
 Checkpoint: Output 3: The resulting dataset is grouped by the extracted noun column and the count, mean sentiment score and sentiment for each noun. This is written to a csv file.
 
 For example, all the sentiment scores of statements where "bed" is the noun will be averaged
