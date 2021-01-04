@@ -51,8 +51,69 @@ The difference here is the use of dependency parsing and parts of speech tagging
 
 
 # STEP 3: CUSTOMIZED SOLUTION
-Though the output of the above methods were not satisfactory, some aspects of text analysis worked well in each. 
+Though the output of the above methods were not satisfactory, some aspects of text analysis worked well in each. For this solution, I used Spacy module in python because I was looking for a solution witha quick turnaround.
+
+![screenshot](https://github.com/karthikkumar001/A-method-to-extract-actionable-insights-from-negative-reviews-using-NLP/blob/main/Images/Picture1.png)
 
 
+### PRE-PROCESSING
+First step is to pre-process/ clean the data we saved in the csv file. 
+The following were done on the review text,
+  •	remove emojis and symbols
+  •	remove alphanumeric words
+  •	remove special characters
+  •	remove double-double and double-single quotes
+  •	remove extra spaces
+  •	remove periods in front of words (e.g. ‘.room’)
+  •	make the text lowercase
+
+Additionally, because of the differences in how google and tripadvisor present the data, the following data normalization steps are also performed,
+  •	Tripadvisor ratings should be normalized to google’s format of [1/5, 2/5, etc.]
+  •	Google’s review data contains text [a few weeks ago, a few months ago, a year ago, etc.] – the proper year must be populated for these
+
+
+### TOKENIZATION
+The reviews are split into separate sentences. This step is important because the aim is to implement a simple solution and hence dealing with single statements will provide a better result.
+Example,
+The bed was very dirty. It has stains and bugs.
+
+
+
+Checkpoint: output 1: This data is written as a csv file for further use
+
+### computing n-grams
+The next step is to populate unigrams, bigrams, and trigrams. This will help us check for frequency of single and grouped words which might give some evidence.
+We remove stop words from Output 1 and lemmatize the sentence. We pass this data to a count vectorizer function to populate the n-grams. We use the count vectorizer range (1,1), (2,2) and (3,3) to get unigrams, bigrams, and trigrams, respectively. 
+Checkpoint: Output 2: The n-grams are appended into a single data frame and written to a csv file.
+
+
+
+### Getting the noun data:
+From output 1, the sentiment of each statement is calculated using Sentiment Intensity Analyser from VaderSentiment python module. 
+The code by (Williams, 2020) was modified for this part since it worked well.
+All 1/5 and 2/5 ratings were filtered and from each sentence, the subject and object nouns are extracted. This is done with the help of Spacy module in python. The words of interest are extracted using the below conditions,
+  •	Pos tag should be NOUN (tag_ attribute of Spacy parsed text should start with NN)
+  •	dependency should be nominal subject or direct object (dep_ attribute of Spacy parsed text should be nsubj or dobj)
+
+## Since the sentiment of each statement in output 1 was populated, it can now be assumed that the sentiment of the statement is directed towards the extracted noun. This is the assumption in our research – most of the statements in reviews will talk about a noun subject or object and the attributes surrounding the same.
+
+If a statement has both a noun subject and a noun object, the sentiment of the subject and object are placed in separate rows of the resulting dataframe and the sentiment of the original statement is applied to both.
+Checkpoint: Output 3: The resulting dataset is grouped by the extracted noun column and the count, mean sentiment score and sentiment for each noun. This is written to a csv file.
+
+### Feature extraction
+Output 1 is again used to get the attributes associated with each noun. Output 1 data is filtered for 1/5 and 2/5 reviews and years (2020, 2019, 2018). Once again, the noun subjects and direct objects are extracted from the statements.
+From the rest of the words in the statement, words with the following Spacy parsed dependency are extracted, 
+•	"acl" 
+•	"amod"
+•	"acomp"
+•	"xcomp"
+•	"conj"
+•	"compound"
+
+These are considered the attributes that describe the noun subject/ object. This list was determined by randomly parsing spacy reviews and getting a list of dependencies which represented features in the tested sample. The online website (https://explosion.ai/demos/displacy) was used for this exercise.
+Checkpoint: Output 4 - After extracting the words, the polarity of each word is computed using TextBlob module of python. The output is of the form [noun word – attribute word – polarity of attribute word]. A noun can have multiple attributes and hence in this dataset, noun-attribute combination is unique (care was taken not to add duplicate attributes).
+
+### combining output data
+The above-mentioned process is done separately for tripadvisor scraped files and google scraped files due to some minor changes required in the code. All the 4 output files for each hotel are then combined to form a final list of output files where all the data for all hotels from both tripadvisor and google are consolidated.
 
 
