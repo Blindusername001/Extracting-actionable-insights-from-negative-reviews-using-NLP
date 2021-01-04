@@ -75,9 +75,10 @@ Additionally, because of the differences in how google and tripadvisor present t
 ### TOKENIZATION
 The reviews are split into separate sentences. This step is important because the aim is to implement a simple solution and hence dealing with single statements will provide a better result.
 Example,
-The bed was very dirty. It has stains and bugs.
+The below text will be split into two statements.
+"The bed was very dirty. It has stains and bugs."
 
-
+![screenshot](https://github.com/karthikkumar001/A-method-to-extract-actionable-insights-from-negative-reviews-using-NLP/blob/main/Images/tk1.png)
 
 Checkpoint: output 1: This data is written as a csv file for further use
 
@@ -86,6 +87,17 @@ The next step is to populate unigrams, bigrams, and trigrams. This will help us 
 We remove stop words from Output 1 and lemmatize the sentence. We pass this data to a count vectorizer function to populate the n-grams. We use the count vectorizer range (1,1), (2,2) and (3,3) to get unigrams, bigrams, and trigrams, respectively. 
 Checkpoint: Output 2: The n-grams are appended into a single data frame and written to a csv file.
 
+Unigram:
+
+![screenshot](https://github.com/karthikkumar001/A-method-to-extract-actionable-insights-from-negative-reviews-using-NLP/blob/main/Images/unigram.png)
+
+Bigram:
+
+![screenshot](https://github.com/karthikkumar001/A-method-to-extract-actionable-insights-from-negative-reviews-using-NLP/blob/main/Images/bigram.png)
+
+Trigram:
+
+![screenshot](https://github.com/karthikkumar001/A-method-to-extract-actionable-insights-from-negative-reviews-using-NLP/blob/main/Images/trigram.png)
 
 
 ### Getting the noun data:
@@ -100,8 +112,9 @@ All 1/5 and 2/5 ratings were filtered and from each sentence, the subject and ob
 If a statement has both a noun subject and a noun object, the sentiment of the subject and object are placed in separate rows of the resulting dataframe and the sentiment of the original statement is applied to both.
 Checkpoint: Output 3: The resulting dataset is grouped by the extracted noun column and the count, mean sentiment score and sentiment for each noun. This is written to a csv file.
 
+For example, all the sentiment scores of statements where "bed" is the noun will be averaged
 
-
+![screenshot](https://github.com/karthikkumar001/A-method-to-extract-actionable-insights-from-negative-reviews-using-NLP/blob/main/Images/noun%20ext.png)
 
 
 ### Feature extraction
@@ -119,7 +132,7 @@ These are considered the attributes that describe the noun subject/ object. This
 Checkpoint: Output 4 - After extracting the words, the polarity of each word is computed using TextBlob module of python. The output is of the form [noun word – attribute word – polarity of attribute word]. A noun can have multiple attributes and hence in this dataset, noun-attribute combination is unique (care was taken not to add duplicate attributes).
 
 
-
+![screenshot](https://github.com/karthikkumar001/A-method-to-extract-actionable-insights-from-negative-reviews-using-NLP/blob/main/Images/pol.png)
 
 
 
