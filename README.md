@@ -24,5 +24,35 @@ https://www.youtube.com/watch?v=5RxbfPjQKe8
 A text explanation of how selenium code works can be found here - https://github.com/karthikkumar001/Web-Scraping-infinite-scroll-websites-with-Python-Selenium/blob/main/README.md
 
 
-# STEP 2: TRY USING EXISTING IMPLEMENTATIONS (We might be lucky)
+# STEP 2: TRY USING EXISTING NLP IMPLEMENTATIONS (We might be lucky)
 Why reinvent the wheel? Instead, we can save time by trying out if any existing implementations shared by others can be modified and used for our specific case.
+
+Before I tried to develop my own solutions, I tried some existing NLP techniques implemented by others on the internet. However, these did not product satisfactory results for my dataset.
+
+## Attempt #1: Latent Dirichlet Allocation (LDA)
+LDA is a popular method in text analysis when it comes to topic modelling. Our aim here is to pick actionable insights. Through LDA, we can categorize words in negative reviews under different topics. Our assumption here will be that the words categorized under a topic describe it (For example, if bugs, dirty, stain were under the topic bed).
+
+The below article gives a step-by-step guide on how to implement LDA
+https://towardsdatascience.com/%EF%B8%8F-sentiment-analysis-aspect-based-opinion-mining-72a75e8c8a6d
+
+## Attempy #2: Guided LDA
+Guided LDA can be thought of as a machine learning LDA. We can bias the LDA by giving it topics and some common words under each topic, and it will try to classify the negative review words accordingly.
+
+https://github.com/vi3k6i5/GuidedLDA
+
+## Attempt #3: Aspect based sentiment analysis using Dependency Parsing
+This method is based on the following research,
+Chockalingam, N., 2018. Simple and Effective Feature Based Sentiment Analysis on Product Reviews using Domain Specific Sentiment Scores. Polibits, Volume 57.
+
+The below article outlines how the same can be achieved using Stanford NLP parser,
+https://medium.com/analytics-vidhya/aspect-based-sentiment-analysis-a-practical-approach-8f51029bbc4a
+
+The difference here is the use of dependency parsing and parts of speech tagging (parts of speech are nouns, verbs, etc and dependency parsing outlines the dependecnies  different POS elements have in a statement).
+
+
+# STEP 3: CUSTOMIZED SOLUTION
+Though the output of the above methods were not satisfactory, some aspects of text analysis worked well in each. 
+
+
+
+
