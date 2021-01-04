@@ -100,6 +100,10 @@ All 1/5 and 2/5 ratings were filtered and from each sentence, the subject and ob
 If a statement has both a noun subject and a noun object, the sentiment of the subject and object are placed in separate rows of the resulting dataframe and the sentiment of the original statement is applied to both.
 Checkpoint: Output 3: The resulting dataset is grouped by the extracted noun column and the count, mean sentiment score and sentiment for each noun. This is written to a csv file.
 
+
+
+
+
 ### Feature extraction
 Output 1 is again used to get the attributes associated with each noun. Output 1 data is filtered for 1/5 and 2/5 reviews and years (2020, 2019, 2018). Once again, the noun subjects and direct objects are extracted from the statements.
 From the rest of the words in the statement, words with the following Spacy parsed dependency are extracted, 
@@ -111,7 +115,13 @@ From the rest of the words in the statement, words with the following Spacy pars
 •	"compound"
 
 These are considered the attributes that describe the noun subject/ object. This list was determined by randomly parsing spacy reviews and getting a list of dependencies which represented features in the tested sample. The online website (https://explosion.ai/demos/displacy) was used for this exercise.
+
 Checkpoint: Output 4 - After extracting the words, the polarity of each word is computed using TextBlob module of python. The output is of the form [noun word – attribute word – polarity of attribute word]. A noun can have multiple attributes and hence in this dataset, noun-attribute combination is unique (care was taken not to add duplicate attributes).
+
+
+
+
+
 
 ### combining output data
 The above-mentioned process is done separately for tripadvisor scraped files and google scraped files due to some minor changes required in the code. All the 4 output files for each hotel are then combined to form a final list of output files where all the data for all hotels from both tripadvisor and google are consolidated.
