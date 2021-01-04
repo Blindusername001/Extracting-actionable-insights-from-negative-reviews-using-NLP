@@ -142,7 +142,7 @@ Checkpoint: Output 4 - After extracting the words, the polarity of each word is 
 The above-mentioned process is done separately for tripadvisor scraped files and google scraped files due to some minor changes required in the code. All the 4 output files for each hotel are then combined to form a final list of output files where all the data for all hotels from both tripadvisor and google are consolidated.
 
 
-## ANALYSIS
+## STEP 3: ANALYSIS
 1. Using the unigram, bigram and trigram data, the frequncy of words used in negative reviews can be found
 2. Using output 3 where we have nouns with their mean sentiment scores and freuqncy, we can find nouns (or aspects) that have the most negative scores
 3. Using output 4 where we have attributes of a noun and their polarity, we can find what exactly customers complained about in their reviews regarding a particular noun
