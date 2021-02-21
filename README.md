@@ -148,3 +148,12 @@ The above-mentioned process is done separately for tripadvisor scraped files and
 3. Using output 4 where we have attributes of a noun and their polarity, we can find what exactly customers complained about in their reviews regarding a particular noun
 
 This method can also be used in a filtered manner. For example, if a hotel wants to find what is wrong with their beds, they can use a filtered approach in this code to get that.
+
+
+## STEP 4: DATA VISUALIZATION
+
+For this project, the negative reviews from all Travelodge Hotels in Cardd city were analysed.
+The data visualization of the analysis outputs will help see how this method is useful in deriving actionable insights from negative reviews.
+
+Tableau Public Link - https://public.tableau.com/profile/karthik.kumar8709#!/vizhome/SMAassignment-ST20183898/Story1
+
