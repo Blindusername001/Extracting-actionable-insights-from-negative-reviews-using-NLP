@@ -1,5 +1,5 @@
 # Extracting-actionable-insights-from-negative-reviews-using-NLP
-In this project we seek a method to ethically scrape web review data without using an API or breaking any ethical barriers set by the review websites. We then look at methods we can use to get actionable insights from the extracted negative reviews.
+This project aims at extracting negative hotel reviews from review websiets and performing NLP and data visualization to get actionable insights from the negative reviews.
 
 Before we get to the steps in the project and how it was done, below is a look at the final output on a Tableau dashboard.
 
