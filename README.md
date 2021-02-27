@@ -3,7 +3,7 @@ This project aims at extracting negative hotel reviews from review websiets and 
 
 Before we get to the steps in the project and how it was done, below is a look at the final output on a Tableau dashboard.
 
-<img src="Images/SMA.gif" width="1000" height="480"/>
+<img src="Images/SMA.gif" width="1000" height="400"/>
 
 
 # STEP 1: ETHICAL REVIEW EXTRACTION FROM WEBSITES
