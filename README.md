@@ -159,5 +159,5 @@ This method can also be used in a filtered manner. For example, if a hotel wants
 For this project, the negative reviews from all Travelodge Hotels in Cardd city were analysed.
 The data visualization of the analysis outputs will help see how this method is useful in deriving actionable insights from negative reviews.
 
-Tableau Public Link - https://public.tableau.com/shared/9QYPTWKTC?:display_count=y&:origin=viz_share_link
+Tableau Public Link - https://public.tableau.com/app/profile/karthik.kumar6284/viz/SMAassignment-ST20183898_16451893821540/Negativenounsattributesbycount
 
